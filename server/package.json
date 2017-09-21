@@ -1,0 +1,11 @@
+{
+  "name": "pusherBLEAttendance-server",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "bleno": "^0.4.2",
+    "dateformat": "^3.0.0",
+    "dotenv": "^4.0.0",
+    "pusher": "^1.5.1"
+  }
+}
