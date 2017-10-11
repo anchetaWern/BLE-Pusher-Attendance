@@ -6,7 +6,6 @@ import {
   StyleSheet,
   Text,
   View,
-  NativeAppEventEmitter,
   NativeEventEmitter,
   NativeModules,
   Button,
@@ -183,10 +182,14 @@ export default class pusherBLEAttendance extends Component {
     let bytes = bytesCounter.count(str);
     let data = stringToBytes(str);
 
-    let service_id = '12ab';
-    let characteristic_id = '34cd';
+    const BASE_UUID = '-5659-402b-aeb3-d2f7dcd1b999';
+    const PERIPHERAL_ID = '0000';
+    const PRIMARY_SERVICE_ID = '0100';
 
-    BleManager.write(this.state.connected_peripheral, service_id, characteristic_id, data, bytes)
+    let primary_service_uuid = PERIPHERAL_ID + PRIMARY_SERVICE_ID + BASE_UUID; 
+    let ps_characteristic_uuid = PERIPHERAL_ID + '0300' + BASE_UUID; 
+
+    BleManager.write(this.state.connected_peripheral, primary_service_uuid, ps_characteristic_uuid, data, bytes)
       .then(() => {
 
         this.setState({

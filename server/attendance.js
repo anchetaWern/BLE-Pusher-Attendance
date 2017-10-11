@@ -21,9 +21,16 @@ var attendees = [
   {id: 3, full_name: 'silver', time_entered: dateFormat(new Date(1505908733110), time_format)}
 ];
 
+const BASE_UUID = '-5659-402b-aeb3-d2f7dcd1b999';
+const PERIPHERAL_ID = '0000';
+const PRIMARY_SERVICE_ID = '0100';
+
+var primary_service_uuid = PERIPHERAL_ID + PRIMARY_SERVICE_ID + BASE_UUID;
+var ps_characteristic_uuid = PERIPHERAL_ID + '0300' + BASE_UUID; 
+
 var settings = {
-  service_id: '12ab',
-  characteristic_id: '34cd'
+  service_id: primary_service_uuid,
+  characteristic_id: ps_characteristic_uuid
 };
 
 bleno.on('stateChange', function(state){
