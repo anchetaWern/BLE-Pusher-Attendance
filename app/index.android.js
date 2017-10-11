@@ -114,9 +114,9 @@ export default class pusherBLEAttendance extends Component {
 
     var channel = pusher.subscribe('attendance-channel');
     channel.bind('attendance-event', (data) => {
-      if(data.length > 1){
+      if(data.is_attendees){
         this.setState({
-          attendees: data
+          attendees: data.attendees
         });
       }else{
         ToastAndroid.show(`${data.full_name} just entered the room!`, ToastAndroid.LONG);

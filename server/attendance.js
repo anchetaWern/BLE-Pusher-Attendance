@@ -72,7 +72,12 @@ bleno.on('advertisingStart', function(error){
     }
 });
 
+
 bleno.on('accept', function(clientAddress){
   console.log('client address: ', clientAddress);
-  pusher.trigger('attendance-channel', 'attendance-event', attendees);
+  var data = {
+    is_attendees: true,
+    attendees: attendees
+  };
+  pusher.trigger('attendance-channel', 'attendance-event', data);
 });
