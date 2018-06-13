@@ -74,5 +74,6 @@ react-native run-android
 - [React Native](http://facebook.github.io/react-native/)
 - [Pusher Channels](https://pusher.com/)
 - [Bleno](https://github.com/noble/bleno)
+- [React Native BLE Manager](https://github.com/innoveit/react-native-ble-manager)
 - [Bytes counter](https://github.com/bolshchikov/bytes-counter)
 - [Convert string](https://www.npmjs.com/package/convert-string)
